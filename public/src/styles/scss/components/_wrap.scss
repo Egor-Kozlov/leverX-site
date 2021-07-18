@@ -1,0 +1,19 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrap {
+  flex-grow: 3;
+  max-width: 1160px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}

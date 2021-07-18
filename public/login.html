@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free courses from LEVERX GROUP</title>
+    <link rel="stylesheet" href="./src/styles/css/main.css">
+    <script src="./src/scripts/main.js" defer></script>
+    <script src="./src/scripts/login.js" defer></script>
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="header">
+        <div class="wrap">
+            <!-- onclick="location.href='./article.html'" style="cursor: pointer; -->
+            <div class="header__logo-container" onclick="location.href='./index.html' " style="cursor: pointer;"></div>
+            <div class="header__account-container">
+                <a href="./login.html" class="btn-signin header__btn-signin">Sign In</a>
+                <!-- <img class="header__avatar" src="./src/img/people/avatar.png" alt="is your avatar"> -->
+            </div>
+        </div>
+      </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main class="main">
+        <div class="wrap">
+            <div class="greeting-text-container">
+                <p class="greeting-text">Welcome to course</p>
+            </div>       
+            <div class="login-form"> 
+
+                <div id="login">
+                    <div class="login__google-logo"></div>
+                    <a id="login__button">Sign In with Google </a>
+                </div>
+
+                <div id="user-info">
+                    <div id="userDetails"></div>
+                    <button id="logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="wrap">
+            <p class="copyright-text">2021 &#169 LeverX, Int. All Rights Reserved.</p>
+            <ul class="footer-social-list">
+                <li class="footer-social-list__iltem footer-social-list__iltem--facebook">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--instagram">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--telegram">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--support">
+                    <a href="https://www.google.com" class="footer-social-list__link">Support</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- card template start -->
+    <template id="element-card">
+        <section class="card" onclick="location.href='./article.html'" style="cursor: pointer;">
+            <img class="card__image" alt="image">
+            <div class="card__body">
+                <h6 class="card__title"></h6>
+                <p class="card__discription"></p>
+            </div>
+        </section>
+    </template>
+    <!-- card template end -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB_bpdN3RO1pQKIJWks3FkwpwWSBOcZ5vc",
+            authDomain: "leverx-a3be8.firebaseapp.com",
+            databaseURL: "https://leverx-a3be8-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "leverx-a3be8",
+            storageBucket: "leverx-a3be8.appspot.com",
+            messagingSenderId: "791647341261",
+            appId: "1:791647341261:web:8fa35440dbb34a7c497784",
+            measurementId: "G-ETN56726HG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        document.getElementById('user-info').style.display = "none"
+
+        document.getElementById('login__button').addEventListener('click', GoogleLogin)
+        document.getElementById('logout').addEventListener('click', LogoutUser)
+
+        let provider = new firebase.auth.GoogleAuthProvider()
+
+        function GoogleLogin() {
+            console.log('login__button Btn Call')
+            firebase.auth().signInWithPopup(provider).then(res => {
+
+                document.location.href = './index.html'
+//
+                console.log(res.user)
+                document.getElementById('login').style.display = "none"
+                document.getElementById('user-info').style.display = "block"
+                showUserDetails(res.user)
+            }).catch(e => {
+                console.log(e)
+            })
+        }
+
+        function showUserDetails(user) {
+            document.getElementById('userDetails').innerHTML = `
+          <img src="${user.photoURL}" style="width:10%">
+          <p>Name: ${user.displayName}</p>
+          <p>Email: ${user.email}</p>
+        `
+            localStorage.setItem('userPhoto', `${user.photoURL}`)
+            localStorage.setItem('userName', `${user.displayName}`)
+            // console.log(localStorage.getItem('userPhoto'));
+            // console.log(localStorage.getItem('userName'));
+        }
+
+        function checkAuthState() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    document.getElementById('login').style.display = "none"
+                    document.getElementById('user-info').style.display = "block"
+                    showUserDetails(user)
+                } else {
+
+                }
+            })
+        }
+
+        function LogoutUser() {
+            console.log('Logout Btn Call')
+            firebase.auth().signOut().then(() => {
+                document.getElementById('login').style.display = "block"
+                document.getElementById('user-info').style.display = "none"
+            }).catch(e => {
+                console.log(e)
+            })
+        }
+        checkAuthState()
+    </script>
+</body>
+
+</html>

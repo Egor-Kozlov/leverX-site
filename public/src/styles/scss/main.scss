@@ -1,0 +1,19 @@
+//import fonts Lato Regular 400, Bold 700
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+//for use it: font-family: 'Lato', sans-serif;
+
+// import reset style file
+@import '../scss/config/reset';
+
+// import mixins
+@import '../scss/config/mixins';
+
+//import components' styles
+@import '../scss/components/wrap';
+@import '../scss/components/header';
+@import '../scss/components/main-section';
+@import '../scss/components/main';
+@import '../scss/components/footer';
+@import '../scss/components/article';
+@import '../scss/components/form';
+@import '../scss/components/login-page';

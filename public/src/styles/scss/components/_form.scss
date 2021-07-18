@@ -1,0 +1,173 @@
+.wrap--form {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+}
+
+.form {
+  min-height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  background: url(../../img/backgrounds/form_background.png) no-repeat;
+  background-position-y: 250px;
+  box-sizing: border-box;
+  padding: 15px;
+
+  .form__input-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  label {
+    margin-top: 44px;
+    margin-bottom: 24px;
+
+    @include lato-600;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    letter-spacing: 0.0075em;
+    color: #333333;
+  }
+
+  .form__input-text[type="text"], #form__input-text--tell-your-story{
+    box-sizing: border-box;
+    background: none;
+    border: 1px solid #2F80ED;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  .form__input-text[type="text"]:focus, #form__input-text--tell-your-story:focus {
+    border: 2px solid rgb(33, 110, 235);
+  }
+
+  #form__input-text--tell-your-story {
+    min-width: 125px;
+  }
+
+  #form__input-text--title {
+    min-height: 72px;
+  }
+
+  #form__input-text--title::placeholder {
+
+    @include lato-600;
+    font-size: 42px;
+    line-height: 56px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.005em;
+    color: #828282;
+  }
+
+  #form__input-text--subtitle {
+    min-height: 56px;
+  }
+
+  #form__input-text--subtitle::placeholder {
+    @include lato-600;
+    font-size: 24px;
+    line-height: 132%;
+    /* identical to box height, or 32px */
+    color: #828282;
+  }
+
+  .drop-zone {
+    display: grid;
+    place-items: center;
+    min-height: 116px;
+
+    border: 1px dashed #2F80ED;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include lato-600;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.05em;
+    color: #2F80ED;
+  }
+
+  .drop-zone--over {
+    border: 3px solid #2F80ED;
+  }
+
+  .drop-zone__input {
+    display: none;
+  }
+
+  .drop-zone__thumb {
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+//style, when file was uploaded
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #form__add-form {
+    margin-top: 20px;
+    cursor: pointer;
+    @include lato-600;
+    font-size: 14px;
+    line-height: 142%;
+    /* identical to box height, or 20px */
+    letter-spacing: 0.005em;
+    color: #2F80ED;
+  }
+}
+
+.publish-bar {
+  width: 100%;
+  height: 80px;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: flex-end;
+
+  .publish-bar__btn {
+    width: 138px;
+    height: 48px;
+    border-radius: 24px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    @include lato-600;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.05em;
+    color: #333333;
+  }
+
+  .publish-bar__btn--preview {
+    background: #F2C94C;
+  }
+
+  .publish-bar__btn--publish {
+    margin-right: 26px;
+    color: #F2C94C;
+    border: 1px solid #F2C94C;
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free courses from LEVERX GROUP</title>
+    <link rel="stylesheet" href="src/styles/css/main.css">
+    <script src="./src/scripts/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- header start -->
+    <header class="header">
+        <div class="wrap">
+            <!-- onclick="location.href='./article.html'" style="cursor: pointer; -->
+            <div class="header__logo-container" onclick="location.href='./index.html' " style="cursor: pointer;"></div>
+            <div class="header__account-container">
+                <a href="#" class="btn-signin header__btn-signin">Create a Post</a>
+                <img class="header__avatar" src="./src/img/people/avatar.png" alt="is your avatar">
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- main-section start -->
+    <section class="main-section">
+        <div class="wrap">
+            <div class="main-section-container">
+                <h1 class="main-section__title">Free courses from <span class="main-section__title--uppercase">leverx
+                        group</span></h1>
+                <h6 class="main-section__subtitle">The profession of a programmer is one of the most demanded
+                    in the IT field today. Programming training at LeverX Group
+                    is an excellent opportunity to gain practical knowledge
+                    in the most relevant areas in this area and build a successful
+                    career in our company.
+                </h6>
+                <a href="#" class="btn-start-now">Start Now</a>
+                <!-- <button class="btn-start-now">Start Now</button> -->
+            </div>
+        </div>
+    </section>
+    <!-- main-section end -->
+
+    <!-- main start -->
+    <main class="main">
+        <div class="wrap">
+            <h5 class="main__title">Interesting articles by LeverX Group</h5>
+            <div class="search-container">
+                <input class="main__input-search" type="search" name="" id="" placeholder="Search for artile">
+            </div>
+            <div class="main-tags">
+                <ul class="main-tags__list">
+                    <li><input type="checkbox" id="checkboxOne" value="Angular"><label for="checkboxOne">Angular</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxTwo" value="SAP ABAP" checked><label for="checkboxTwo">SAP
+                            ABAP</label></li>
+                    <li><input type="checkbox" id="checkboxThree" value="Java" checked><label
+                            for="checkboxThree">Java</label></li>
+                    <li><input type="checkbox" id="checkboxFour" value="Design"><label for="checkboxFour">Design</label>
+                    </li>
+                    <li><input type="checkbox" id="checkboxFive" value="SAP TM Consultant"><label for="checkboxFive">SAP
+                            TM Consultant</label></li>
+                    <li><input type="checkbox" id="checkboxSix" value="Frontend" checked><label
+                            for="checkboxSix">Frontend</label></li>
+                    <li><input type="checkbox" id="checkboxSeven" value="Programmer"><label
+                            for="checkboxSeven">Programmer</label></li>
+                    <li><input type="checkbox" id="checkboxEight" value="Python"><label
+                            for="checkboxEight">Python</label></li>
+                    <li><input type="checkbox" id="checkboxNine" value="DevOps"><label for="checkboxNine">DevOps</label>
+                    </li>
+                </ul>
+            </div>
+            <article class="cards-container" id="container">
+            </article>
+        </div>
+    </main>
+    <div id="loginscreen">
+        <button id="login">Login with Google</button>
+    </div>
+    <div id="dashboard">
+        <button id="logout">Logout</button>
+    </div>
+    <!-- main end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="wrap">
+            <p class="copyright-text">2021 &#169 LeverX, Int. All Rights Reserved.</p>
+            <ul class="footer-social-list">
+                <li class="footer-social-list__iltem footer-social-list__iltem--facebook">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--instagram">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--telegram">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--support">
+                    <a href="https://www.google.com" class="footer-social-list__link">Support</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- card template start -->
+    <template id="element-card">
+        <section class="card" onclick="location.href='./article.html'" style="cursor: pointer;">
+            <img class="card__image" alt="image">
+            <div class="card__body">
+                <h6 class="card__title"></h6>
+                <p class="card__discription"></p>
+            </div>
+        </section>
+    </template>
+    <!-- card template end -->
+</body>
+
+</html>

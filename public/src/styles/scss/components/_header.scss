@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+  height: 80px;
+  // position: fixed;
+
+  .wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  background: #2f80ed;
+  box-shadow: 0px 4px 8px rgba(202, 205, 210, 0.35);
+}
+
+.header__logo-container {
+  width: 70px;
+  height: 70px;
+  //or this for new browsers
+  // aspect-ratio: 1/1;
+  background: url(../../img/icons/leverx-logo.svg) no-repeat center;
+}
+
+.btn-signin {
+  width: 190px;
+  height: 48px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 17px;
+  text-decoration: none;
+
+  @include lato-700;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.header__account-container {
+  width: 370px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__btn-logout {
+  width: 100px;
+}
+
+.header__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}

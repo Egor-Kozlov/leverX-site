@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free courses from LEVERX GROUP</title>
+    <link rel="stylesheet" href="src/styles/css/main.css">
+    <script src="./src/scripts/main.js" defer></script>
+    <script src="./src/scripts/login.js" defer></script>
+
+</head>
+
+<body>
+
+<!-- header start -->
+<header class="header">
+    <div class="wrap">
+        <!-- onclick="location.href='./article.html'" style="cursor: pointer; -->
+        <div class="header__logo-container" onclick="location.href='./index.html' " style="cursor: pointer;"></div>
+        <div class="header__account-container">
+            <!-- <a href="./login.html" class="btn-signin header__btn-signin">Sign In</a> -->
+        </div>
+    </div>
+  </header>
+  <!-- header end -->
+
+    <!-- main start -->
+    <main class="main">
+        <div class="wrap">
+            <div class="breadcrumb">
+                <ul class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--home"><a class="breadcrumb__link--home"
+                            href="./index.html">Home page</a></li>
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="#">Article</a></li>
+                </ul>
+            </div>
+            <div class="main-picture"></div>
+            <div class="article-text">
+                <h3 class="article-text__title">Top 15 Features of Angular </h3>
+                <h5 class="article-text__subtitle">Addition of Dependency Injection</h5>
+                <p class="article-text__paragraph">It has added the information for the dependency and also regarding
+                    the ng-content selections for the data. It helps in wrapping the ng content selections and can help
+                    in checking files by creating scripts and using various interfaces. This would help us provide
+                    additional data that can be used in tools like Angular language services, which offers the
+                    functionality to offer suggestions and hints for the components or methods pre-defined in built-in
+                    libraries.</p>
+                <h5 class="article-text__subtitle">Merging of Multiple Transition File</h5>
+                <p class="article-text__paragraph">Following the convention, earlier, it was possible to merge only one
+                    translation file per program. But, after the release of new features of Angular 10, it is possible
+                    to combine multiple files in a single go. Also, this transaction of the files will be made possible
+                    via messaging functionalities.</p>
+                <h5 class="article-text__subtitle">Generic with ModuleWithProviders</h5>
+                <p class="article-text__paragraph">Ihe use of generic keywords has been made mandatory with the
+                    ModuleWithProviders in this version of Angular 10. This requirement has aroused to make the
+                    ModuleWithProviders patterns work with the Ivy compiling and rendering sequence. Before this
+                    implementation, the View layer of the MVC architecture has provided the facility with the ability to
+                    omit the generic keyword to be used with the ModuleWithProviders. </p>
+                <p class="article-text__paragraph">Again, a developer may want to use the View layer, and that might be
+                    dependent on the library that needs a generic type parameter to be included. Here, ngcc could be of
+                    no help, and only the application logic code would be migrated, resulting in the library’s fixation
+                    by its native author.To prevent this, skipLibChecks can be disabled by setting its binary value to
+                    false in config or while application update for using Ivy.</p>
+            </div>
+        </div>
+    </main>
+    <!-- main end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="wrap">
+            <p class="copyright-text">2021 &#169 LeverX, Int. All Rights Reserved.</p>
+            <ul class="footer-social-list">
+                <li class="footer-social-list__iltem footer-social-list__iltem--facebook">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--instagram">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--telegram">
+                    <a href="https://www.google.com" class="footer-social-list__link"></a>
+                </li>
+                <li class="footer-social-list__iltem footer-social-list__iltem--support">
+                    <a href="https://www.google.com" class="footer-social-list__link">Support</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!-- footer end -->
+  <!--start header no login template -->
+  <template id="non-logged-user">
+    <a href="./login.html" class="btn-signin header__btn-signin">Sign In</a>
+  </template> 
+  <!--end header no login template -->
+
+  <!--start header login template -->
+  <template id="logged-user">
+    <a href="./form.html" class="btn-signin header__btn-signin">Create a post</a>
+    <img class="header__avatar" src="./src/img/people/avatar.png"  alt="is your avatar">
+    <a onclick="logOut()" id ='logout' class="btn-signin header__btn-logout">Log out</a>
+  </template> 
+  <!--end header no login template -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+</body>
+
+</html>
